@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: #2c3e50;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* range les blocs en colone l'un au dessus de l'autre*/
+    align-items: center;
+}
+
+header nav ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 0px;
+    margin-top: 40px;
+}
+
+header nav a{
+    text-decoration: none; /*permet de définir ce qu'on veut pour reconnaitre le lien hypertext, le classico souligné (ici il est descativé car pas beau)*/
+    color: white;
+    font-weight: bold; /* Passe le text en gras */
+    font-size: 1.1rem; /* augmente légèrement la taille du texte */
+    text-transform: uppercase; /* Force la majuscule sur le texte*/
+    transition: 0.3s; /* sert à setup l'animation de survole du bloc */
+}
+
+header nav a:hover{
+    color: #3498db;
+    /*background-color: white;
+    border: 2px solid #3498db; tout ce bloc crée une cartouche ou est rangé le texte et brille
+    border-radius: 6px;
+    box-shadow: 0 0 15px #3498db;*/
+    text-shadow: 
+        /* 0 0 5px #3498db,   /*Petite lueur */
+        /* 0 0 10px #3498db,  /*Moyenne lueur */
+        0 0 15px #3498db; /*Grande aura */;
+        /* 0px horizontal, 0px vertical, 15px de flou, couleur bleue */
+}
+
+h2{
+    color: #3498db;
+    border-bottom: 2px solid #3498db; /* border créer une ligne, bottom définit l'endroit*/
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: block;         
+}
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f2f5;
+    color: #000;
+}
+
+section{
+    background-color: white;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 10px; /* modifie les bords du bloc en question */
+}
+
+.skills-badges {
+    list-style-type: none; /* ici c'est pour définir quel symbole on veut pour afficher la liste, des numéros ou des carrés etc... */
+    padding-left: 0;
+    display: flex; /* "Flex" fait aligner les objets */
+    flex-wrap: wrap;/* si y'a pas la place sur l'écran qui display comme un téléphone, les blocs vont à la ligne*/
+    gap: 10px;  /*laisse 10px de gap entre les objets de la liste*/
+
+}
+
+.skills-badges li{
+    background: #eef2f7; /*définit la couleur derrière chaque objet de la liste*/
+    padding: 10px 15px;
+    border-radius: 5px;
+    border-left: 5px solid #3498db;
+    /*ici pas besoin de spécifié le gap entre les blocs car c'est déjà spécifié dans le parent (ul)*/
+}
