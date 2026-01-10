@@ -181,3 +181,31 @@ section{
 .card:hover h3 {
     color: #3498db; /* Le bleu de ton thème */
 }
+
+.style-list li{
+    margin-left: 50px;
+}
+
+.name-projet {
+    color: #3498db;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.img-container {
+    text-align: center;
+    margin: 30px 0;/*haut bas gauche droite*/
+}
+
+.img-container img{
+    max-width: 100%; /*l'enfant ne pourra/doit pas dépasser la taille du parent*/
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.img-list {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+}
