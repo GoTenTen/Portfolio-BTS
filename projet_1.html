@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Mon super projet Python</h1>
+    <p>Ici, je vais expliquer en détail comment j'ai codé ce projet...</p>
+    
+    <a href="index.html">⬅ Retour à l'accueil</a>
+
+    <script>
+        const toggleInput = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+
+        // --- PARTIE 1 : LA MÉMOIRE (Au chargement de la page) ---
+        // On demande au navigateur : "Est-ce qu'il y a une note 'theme' sauvegardée ?"
+        const themeSauvegarde = localStorage.getItem('theme');
+
+        // Si la note dit "dark", on remet tout de suite le mode sombre
+        if (themeSauvegarde === 'dark') {
+            body.classList.add('dark-mode');
+            // On pense aussi à recocher le bouton s'il existe sur la page
+            if (toggleInput) {
+                toggleInput.checked = true;
+            }
+        }
+
+        // --- PARTIE 2 : L'ACTION (Au clic) ---
+        // On vérifie si le bouton existe (pour éviter les erreurs si tu l'as pas mis sur la page 2)
+        if (toggleInput) {
+            toggleInput.addEventListener('change', () => {
+                if (toggleInput.checked) {
+                // On active le mode sombre
+                body.classList.add('dark-mode');
+                // ET on écrit une note dans la mémoire : "theme = dark"
+                localStorage.setItem('theme', 'dark');
+                } else {
+                // On désactive
+                body.classList.remove('dark-mode');
+                // On note : "theme = light"
+                localStorage.setItem('theme', 'light');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

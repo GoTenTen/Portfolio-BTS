@@ -6,7 +6,7 @@
     <title>Portfolio de BUTET Jason</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="">
     <header>
         <h1>Premier titre en gros</h1>
         <p>phrase d'accueil</p>
@@ -15,6 +15,10 @@
                 <li><a href="#aboutme">à Propos de moi</a></li>
                 <li><a href="#competences">Compétences</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><div class="toggle-container">
+                        <input type="checkbox" id="dark-mode-toggle">
+                        <label for="dark-mode-toggle" class="toggle-label"></label>
+                    </div></li>
             </ul>
         </nav>
     </header>
@@ -35,7 +39,7 @@
         <section id="project">
             <h2>Mes Projets</h2>
             <div class="gallery">
-                <a href="#" class="card">
+                <a href="projet_1.html" class="card">
                     <img src="img/russian_roulette.png" alt="Mon Projet Python">
                     <div class="card-content">
                         <h3>Gestion clients Python</h3>
@@ -55,6 +59,32 @@
     <footer id = "contact">
         <p>This website is in working progress...</p>
     </footer>
-    
+    <script>
+        const toggleInput = document.getElementById('dark-mode-toggle'); //document -> la page web complète
+        const body = document.body;
+
+        const themeSauvegarde = localStorage.getItem('theme');
+
+        if (themeSauvegarde === 'dark') {
+                body.classList.add('dark-mode');
+                // On recoche le bouton (s'il existe sur la page)
+                if (toggleInput) {
+                    toggleInput.checked = true;
+                }
+            }
+        toggleInput.addEventListener('change', () => {
+            //Si la case est coché on passe en mode sombre
+            if (toggleInput.checked){
+                body.classList.add("dark-mode");
+                //on stock le fait que le site est passé en dark mode
+                localStorage.setItem('theme', 'dark');
+            }else{
+                //Sinon on l'enlève
+                body.classList.remove("dark-mode");
+                //et ici on stock si ça passe en light mode
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
 </body>
 </html>
