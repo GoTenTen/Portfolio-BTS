@@ -10,6 +10,7 @@
     --fond: #f0f0f0;
     --fond2: white;
     --text: #121212;
+    --header_text:rgb(143, 189, 226);
 }
 
 /* le dark mode sera appliqué avec javascript*/
@@ -17,10 +18,12 @@
     --fond: #151515;
     --fond2: #1e1e1e;
     --text: #f0f0f0;
+    --header_text:rgb(158, 119, 230);
 }
 
 header{
-    background-color: #32506e;
+    /*background-color: #32506e;*/
+    background: linear-gradient(to bottom, #32506e, #1c2e40);
     color: white;
     padding: 40px 20px;
     text-align: center;
@@ -85,7 +88,7 @@ header nav a{
 }
 
 header nav a:hover{
-    color: #3498db;
+    color: var(--header_text);
     /*background-color: white;
     border: 2px solid #3498db; tout ce bloc crée une cartouche ou est rangé le texte et brille
     border-radius: 6px;
@@ -93,7 +96,7 @@ header nav a:hover{
     text-shadow: 
         /* 0 0 5px #3498db,   /*Petite lueur */
         /* 0 0 10px #3498db,  /*Moyenne lueur */
-        0 0 15px #3498db; /*Grande aura */;
+        0 0 15px var(--header_text); /*Grande aura base color -> #3498db*/;
         /* 0px horizontal, 0px vertical, 15px de flou, couleur bleue */
 }
 
@@ -208,4 +211,25 @@ section{
     list-style-type: none;
     display: flex;
     gap: 10px;
+}
+
+.scroll-tab{
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    overflow: auto; /*pour scroll*/
+    margin: 0 auto;
+    border: 2px solid #2c3e50;
+
+    background-color: white;
+}
+
+.synt-img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.section-pdf-btn{
+    text-align: center;
 }
